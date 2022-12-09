@@ -3,6 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/*---------------------------- root color----------------------- */
+:root{
+--background-primary-color:#fffcfc;
+--background-secondary-color:lightgray;
+}
+
 /* ---------------common style------------------ */
 body,
 p,
@@ -37,7 +44,7 @@ body {
 }
 
 header {
-  background-color: #27262c;
+  background-color:var(--background-primary-color);
   padding: 0.8rem 0;
   box-shadow: 2px 2px 10px #aaadae;
 }
@@ -51,12 +58,12 @@ header {
 
 .subtitle {
   font-size: 1.5rem;
-  color: #f9f8eb;
+  color: #222003;
   text-transform: uppercase;
 }
 
 nav a {
-  color: #ebebeb;
+  color: #222003;
   font-size: 1.5rem;
 }
 
@@ -72,9 +79,9 @@ nav li {
 nav a:hover {
   background-image: url("https://scottyzen.sirv.com/Images/v/button.png");
   background-size: 100% 100%;
-  color: #27262c;
+  color: #76d2fa;
   animation: 300ms spring ease-out;
-  text-shadow: 0 -1px 10 #ef816c;
+  text-shadow: 0 -1px 10 #38d1d3;
   font-weight: bold;
 }
 
@@ -226,7 +233,7 @@ nav li a:active {
   height: 400px;
   width: 100%;
   display: flex;
-  background-color: lightgray;
+  background-color:var(--background-primary-color);
   overflow: hidden;
 }
 .intro-image {
@@ -270,7 +277,7 @@ nav li a:active {
 }
 
 .self-container {
-  background-color: #fffcfc;
+  background-color:var(--background-secondary-color);
   height: 450px;
   position: relative;
   float: left;
@@ -321,6 +328,7 @@ nav li a:active {
 .offered-container {
   width: 100%;
   height: 540px;
+  background-color: var(--background-primary-color);
 }
 
 .container-row1 {
@@ -395,7 +403,7 @@ nav li a:active {
   height: fit-content;
   width: 100%;
   padding: 20px 0;
-  background-color: #d1ccca;
+  background-color:var(--background-secondary-color);
 }
 
 .project-container h2 {
@@ -406,7 +414,7 @@ nav li a:active {
 .projectrow2 {
   display: grid;
   width: 100%;
-  margin-top: 20px;
+  margin-top:20px;
   grid-template-rows: 1;
   grid-template-columns: repeat(3, 300px);
   place-items: center;
@@ -414,9 +422,11 @@ nav li a:active {
   justify-content: space-evenly;
 }
 
-.project img:hover {
-  transform: scale(1.02);
+.project{
+  position: relative;
+  width: 300px;
 }
+
 .project img {
   height: 210px;
   width: 100%;
@@ -424,99 +434,60 @@ nav li a:active {
   transition: transform 0.2s;
 }
 
-/* ------------------contact container------------------- */
-.contact-container {
+.image_overlay{
+  position:absolute;
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+
+.project:hover .image_overlay{
+  opacity: 0.8;
+}
+
+.imagebottomEffect{
+  height: 210px;
   width: 100%;
-  height: 550px;
+  bottom:3px;
+  top:0;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  background-color:whitesmoke;
 }
 
-.back-contact {
-  background: url("images/contactback.png");
-  color: white;
-  width: 80%;
-  height: 450px;
-  border-radius: 5px;
+.project:hover .imagebottomEffect{
+  height: 210px;
+  transition: all 0.6s ease-in;
 }
 
-.contact_1 {
-  text-align: center;
-  margin: 20px auto;
+.project .eye{
+  font-size: 40px;
+ opacity:0.8;
+ color: rgb(225, 92, 34);
+  
 }
 
-.contact_1 h2 {
+.project h4{
+  /* padding-top: 5px; */
+  margin-bottom: 0.5rem;
+  color: #24262a;
   font-weight: 700;
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "Poppins";
 }
 
-.contact_1 p {
-  margin-bottom: 1rem;
-  font: 400 1rem/1.625rem "Open Sans", sans-serif;
-}
-
-.contact_2 {
-  margin: 0 auto;
-  width: 50%;
-}
-
-.contact_2 input,
-textarea {
-  border: 1px solid white;
-  padding: 13px;
-  border-radius: 5px;
-  margin-bottom: 5px;
-  width: 100%;
-  caret-color: #f9f8eb;
-  background-color: transparent;
-}
-
-form ::placeholder {
-  color: white;
-}
-
-.contact_2 input:focus,
-textarea:focus {
-  outline: none;
-}
-
-.contact_2 button {
-  width: 100%;
-  height: 40px;
-  border: 2px solid black;
-  background-color: #ebebeb;
-  border-radius: 20px;
-  padding: 5px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.contact_2 button:focus {
-  outline: none;
-}
-
-.contact_2 button:hover {
-  background-color: #6b28d7;
-  color: white;
-  outline: none;
-  border: 2px solid white;
-}
-
 /* ----------------------footer ------------------ */
-.footer-div{
-  height:120px;
+.footer-div {
+  height: 120px;
   width: 100vw;
   background-color: #24262a;
   text-align: center;
-  color:#cfd7de;
+  color: #cfd7de;
 }
 
-.contact-me{
+.contact-me {
   width: 50%;
   margin: auto;
   height: 70px;
@@ -525,7 +496,11 @@ textarea:focus {
   align-items: center;
 }
 
-.contact-icon{
+.contact-me a:any-link {
+  color: #cfd7de;
+}
+
+.contact-icon {
   font-size: 34px;
   background-color: #ff6904;
   padding: 10px;
@@ -533,9 +508,9 @@ textarea:focus {
   margin-right: 5px;
 }
 
-.contact-icon:hover{
-background-color: #cfd7de;
-color:#ff6904;
+.contact-icon:hover {
+  background-color: #cfd7de;
+  color: #ff6904;
 }
 /* -------------------for responsive---------------------- */
 @media (max-width: 640px) {
@@ -617,16 +592,16 @@ color:#ff6904;
     padding-bottom: 10px;
   }
   .container-row2 {
+    margin-top: 60px;
     grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
   }
   .projectrow1,
   .projectrow2 {
     grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
   }
- 
 }
 
-@media (max-width: 500px){
+@media (max-width: 500px) {
   .slider .slide .text p {
     font-size: 1.4em;
     line-height: 30px;
@@ -641,5 +616,4 @@ color:#ff6904;
   .contact_2 button {
     width: 100%;
   }
- 
 }
