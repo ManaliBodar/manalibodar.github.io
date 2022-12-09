@@ -25,7 +25,7 @@ rightBtn.addEventListener("click", () => {
   }
   slides[activeSlide].classList.add("active");
   slideIcons[activeSlide].classList.add("active");
-  console.log('right click');
+ 
 });
 
 leftBtn.addEventListener("click", () => {
@@ -42,7 +42,7 @@ leftBtn.addEventListener("click", () => {
     }
     slides[activeSlide].classList.add("active");
     slideIcons[activeSlide].classList.add("active");
-    console.log('left click');
+    
   });
   
 
@@ -80,3 +80,23 @@ slider.addEventListener("mouseover",() =>{
 slider.addEventListener('mouseout',()=>{
     repeater();
 })
+
+
+// for click on view button
+const viewBtn = document.getElementById('viewbtn');
+const project_Info = document.getElementById('project_info');
+
+let scrolled = 0;
+
+$('#viewbtn').on('click',function(){
+  scrolled = scrolled + 1240;
+console.log('scroll top');
+  $('#project-info').animate({
+    screenTop:scrolled
+  });
+});
+
+
+//click on project image display pop up for project
+
+const projectAll = document.querySelectorAll('.project');

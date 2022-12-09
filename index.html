@@ -10,6 +10,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     />
     <link rel="stylesheet" href="style.css" />
+    <!-- <script src="http://code.jquery.com/jquery-1.9.1.js"></script> -->
   </head>
   <body>
     <!-- for navigation -->
@@ -21,9 +22,9 @@
         </div>
         <nav>
           <ul>
-            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#project-info" >Portfolio</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#footer-contact">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -40,8 +41,8 @@
           <div class="text">
             <p>HELLO WORLD,</p>
             <p>I AM WEB DEVELOPER</p>
-            <button>VIEW MY WORK</button>
-            <button>DOWNLOAD MY CV</button>
+            <button id="viewbtn">VIEW MY WORK</button>
+            <a href="images/Manali_Bodar_Resume.pdf" download="Resume"><button>DOWNLOAD MY CV</button></a>
           </div>
         </div>
         <div class="slide">
@@ -107,7 +108,7 @@
     </section>
 
     <!-- -------------for services -------------- -->
-    <section>
+    <section id="skills">
       <div class="service-container">
         <div class="self-container">
           <div class="text-container">
@@ -192,25 +193,38 @@
     </section>
 
     <!-- --------project information------------- -->
-    <section>
+    <section id="project-info">
       <div class="project-container">
         <h2>Project List</h2>
         <!-------------- row 1----------- -->
         <div class="projectrow1">
           <div class="project">
             <img src="images/miniproject.jpg" alt="projectimage" />
-            <label for=""><b>Project:</b>&nbsp;25+ Mini projects</label>
-            <p>25+ mini projects based on UI/UX design-HTML,CSS,and JS</p>
+            <div class="image_overlay imagebottomEffect">
+              <i class="fa-regular fa-eye eye"></i>
+            </div>
+            <h4>25+ Mini projects</h4>
+            <p>
+              &#9755;<b>Technology:</b>25+ mini projects based on UI/UX
+              design-HTML,CSS,and JS
+            </p>
           </div>
+
           <div class="project">
             <img src="images/musicmaster.jpg" alt="projectimage" />
-            <label for=""><b>Project:</b>&nbsp;Music Master</label>
-            <p>Music master system using ReactJs</p>
+            <div class="image_overlay imagebottomEffect">
+              <i class="fa-regular fa-eye eye"></i>
+            </div>
+            <h4>Music Master</h4>
+            <p>&#9755;<b>Technology:</b>Music master system using ReactJs</p>
           </div>
           <div class="project">
             <img src="images/portfolio.jpg" alt="projectimage" />
-            <label for=""><b>Project:</b>&nbsp;Personal Portfolio</label>
-            <p>Using HTML,CSS,ReactJS</p>
+            <div class="image_overlay imagebottomEffect">
+              <i class="fa-regular fa-eye eye"></i>
+            </div>
+            <h4>Personal Portfolio</h4>
+            <p>&#9755;<b>Technology:</b>Using HTML,CSS,ReactJS</p>
           </div>
         </div>
 
@@ -218,61 +232,63 @@
         <div class="projectrow2">
           <div class="project">
             <img src="images/tailormark.jpg" alt="projectimage" />
-            <label for=""><b>Project:</b>&nbsp;TailorMark System</label>
-            <p>Developed UI/UX for TailorMark System</p>
+            <div class="image_overlay imagebottomEffect">
+              <i class="fa-regular fa-eye eye"></i>
+            </div>
+            <h4>TailorMark System</h4>
+            <p>
+              &#9755;<b>Technology:</b>Developed UI/UX for TailorMark System
+            </p>
           </div>
           <div class="project">
             <img src="images/todo1.jpeg" alt="projectimage" />
-            <label for=""><b>Project:</b>&nbsp;Todo List</label>
-            <p>User data add in todo-HTM,CSS and JS</p>
+            <div class="image_overlay imagebottomEffect">
+              <i class="fa-regular fa-eye eye"></i>
+            </div>
+            <h4>Todo List</h4>
+            <p>&#9755;<b>Technology:</b>User data add in todo-HTM,CSS and JS</p>
           </div>
           <div class="project">
             <img src="images/devicemanagement.jPG" alt="projectimage" />
-            <label for=""><b>Project:</b>&nbsp;DeviceManagement System</label>
-            <p>Design landing Page-Bootstrap,HTMLand CSS</p>
+            <div class="image_overlay imagebottomEffect">
+              <i class="fa-regular fa-eye eye"></i>
+            </div>
+            <h4>DeviceManagement System</h4>
+            <p>
+              &#9755;<b>Technology:</b>Design landing Page-Bootstrap,HTMLand CSS
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- -------------contact information---------- -->
-    <section>
-      <div class="contact-container">
-        <div class="back-contact">
-          <div class="contact_1">
-            <h2>GET UPDATE FROM ANYWHERE</h2>
-            <p>
-              For any type of online project please don't hesitate to get in
-              touch with me.
-            </p>
-          </div>
-          <div class="contact_2">
-            <form action="">
-              <input type="text" name="" id="" placeholder="Name"/>
-              <br/>
-              <input type="email" name="" id="" placeholder="Email" />
-              <br/>
-              <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
-              <br/>
-              <button type="submit">Submit</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer>
+    <!-- -------------contact information footer---------- -->
+
+    <footer id="footer-contact">
       <div class="footer-div">
         <div class="contact-me">
-          <i class="fa-solid fa-envelope contact-icon"></i>
-          <i class="fa-brands fa-github contact-icon"></i>
-          <i class="fa-brands fa-linkedin contact-icon"></i>
+          <a
+            href="mailto:bodarmanali66@gmail.com &subject=Mail from our Website&body=Some body text here"
+            target="_blank"><i class="fa-solid fa-envelope contact-icon"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/bodar-manali/"
+            target="_blank"><i class="fa-brands fa-linkedin contact-icon"></i
+          ></a>
+          <a href="https://github.com/ManaliBodar"
+           target="_blank" ><i class="fa-brands fa-github contact-icon"></i
+          ></a>
         </div>
         <div>
-          <p>Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2022 Bodar Manali.All rights Reserved</p>
+          <p>
+            Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2022
+            Bodar Manali.All rights Reserved
+          </p>
         </div>
       </div>
-      
     </footer>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js"></script>
     <script src="index.js"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.5.0.js"></script> -->
   </body>
 </html>
