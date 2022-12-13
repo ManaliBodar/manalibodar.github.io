@@ -22,7 +22,7 @@
         </div>
         <nav>
           <ul>
-            <li><a href="#project-info" >Portfolio</a></li>
+            <li><a href="#project-info">Portfolio</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#footer-contact">Contact</a></li>
           </ul>
@@ -42,7 +42,9 @@
             <p>HELLO WORLD,</p>
             <p>I AM WEB DEVELOPER</p>
             <button id="viewbtn">VIEW MY WORK</button>
-            <a href="images/Manali_Bodar_Resume.pdf" download="Resume"><button>DOWNLOAD MY CV</button></a>
+            <a href="images/Manali_Bodar_Resume.pdf" download="Resume"
+              ><button>DOWNLOAD MY CV</button></a
+            >
           </div>
         </div>
         <div class="slide">
@@ -198,7 +200,7 @@
         <h2>Project List</h2>
         <!-------------- row 1----------- -->
         <div class="projectrow1">
-          <div class="project">
+          <div class="project modal-open" data-modal="modal1">
             <img src="images/miniproject.jpg" alt="projectimage" />
             <div class="image_overlay imagebottomEffect">
               <i class="fa-regular fa-eye eye"></i>
@@ -210,7 +212,7 @@
             </p>
           </div>
 
-          <div class="project">
+          <div class="project modal-open" data-modal="modal2">
             <img src="images/musicmaster.jpg" alt="projectimage" />
             <div class="image_overlay imagebottomEffect">
               <i class="fa-regular fa-eye eye"></i>
@@ -218,7 +220,8 @@
             <h4>Music Master</h4>
             <p>&#9755;<b>Technology:</b>Music master system using ReactJs</p>
           </div>
-          <div class="project">
+
+          <div class="project modal-open" data-modal="modal3">
             <img src="images/portfolio.jpg" alt="projectimage" />
             <div class="image_overlay imagebottomEffect">
               <i class="fa-regular fa-eye eye"></i>
@@ -226,11 +229,68 @@
             <h4>Personal Portfolio</h4>
             <p>&#9755;<b>Technology:</b>Using HTML,CSS,ReactJS</p>
           </div>
+
+          <!-- the modal -->
+          <div id="modal1" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div class="modal-header">25+ Mini Projects</div>
+              <div class="modal-body">
+                Real life usable 25+ projects that includes password
+                generator,image slider,Split Landing Page,Toast
+                Notifications,insect catch game, Drawing app and github Profile
+                etc.Modern styling with flexbox, CSS animations, custom
+                properties, etc.DOM manipulation, events, array methods, HTTP
+                requests & more
+              </div>
+              <div class="modal-body2">
+                <b>Technologies:</b>&nbsp;HTML,CSS and JavaScript(RESTAPIs) that
+                relate to the DOM (Document Object Model).
+              </div>
+              <br />
+              <div class="modal-footer">
+                <button class="link modal-close">Close</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="modal2" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div class="modal-header">Music Master</div>
+
+              <div class="modal-body">
+                Music Master is generally concept of fetching data through API.Here used Spotify-api for finding details of artist.
+                Enter the name of artist afterward go to search so we can eaily find the followers and artist music album detail.
+              </div>
+              <div class="modal-body2"><b>Technologies:</b>&nbsp;HTML,CSS, ANd React JS(React Router and Stateless functional component)</div>
+              <br />
+              <div class="modal-footer">
+                <button class="link modal-close">Close</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="modal3" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div class="modal-header">Personal Portfolio</div>
+
+              <div class="modal-body">
+                In this Project,First display all the details of the developer.further more highlight the project which have been made by developers.It's like portfolio for getting information about user and projects.In addition also provide the social media link for easily contact.
+              </div>
+              <div class="modal-body2"><b>Technologies:</b>&nbsp;HTML,CSS,React DOM and Classes.</div>
+              <br />
+              <div class="modal-footer">
+                <button class="link modal-close">Close</button>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!------------------ row2----------------- -->
         <div class="projectrow2">
-          <div class="project">
+          <div class="project modal-open" data-modal="modal4">
             <img src="images/tailormark.jpg" alt="projectimage" />
             <div class="image_overlay imagebottomEffect">
               <i class="fa-regular fa-eye eye"></i>
@@ -240,7 +300,8 @@
               &#9755;<b>Technology:</b>Developed UI/UX for TailorMark System
             </p>
           </div>
-          <div class="project">
+
+          <div class="project modal-open" data-modal="modal5">
             <img src="images/todo1.jpeg" alt="projectimage" />
             <div class="image_overlay imagebottomEffect">
               <i class="fa-regular fa-eye eye"></i>
@@ -248,7 +309,8 @@
             <h4>Todo List</h4>
             <p>&#9755;<b>Technology:</b>User data add in todo-HTM,CSS and JS</p>
           </div>
-          <div class="project">
+
+          <div class="project modal-open" data-modal="modal6">
             <img src="images/devicemanagement.jPG" alt="projectimage" />
             <div class="image_overlay imagebottomEffect">
               <i class="fa-regular fa-eye eye"></i>
@@ -257,6 +319,56 @@
             <p>
               &#9755;<b>Technology:</b>Design landing Page-Bootstrap,HTMLand CSS
             </p>
+          </div>
+
+          <div id="modal4" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div class="modal-header">TailorMark System</div>
+
+              <div class="modal-body">
+                Developed UI/UX for TailorMark system where you can order your suits and shirts according to your body.
+                Represent Visulization of body so client easily select and design its own suits.Also provide online delivery option.Client change order and request a refund also.
+              </div>
+              <div class="modal-body2"><b>Technologies:</b>&nbsp; HTML,CSS,Bootstrap,ReactJS.</div>
+              <br />
+              <div class="modal-footer">
+                <button class="link modal-close">Close</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="modal5" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div class="modal-header">Todo List</div>
+
+              <div class="modal-body">
+                The TODO list has a lot of task management features, and its user interface is nothing short of stellar.
+              User can add data in todo and delete also.Generally it is one type of remainder what task to perform.and afterward delete task which already done.
+              </div>
+              <div class="modal-body2"><b>Technologies:</b>&nbsp;HTML,CSS,and JS</div>
+              <br />
+              <div class="modal-footer">
+                <button class="link modal-close">Close</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="modal6" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div class="modal-header">Device Management System</div>
+
+              <div class="modal-body">
+                It's internal project for device management system.where we can manage device like mobile phone,tablet,printer etc. data and configuration settings for all types of mobile devices, including mobile phones, smartphones, tablet computers, ruggedized mobile computers, mobile printers, mobile POS devices, etc. Most recently laptops and desktops have been added to the list of systems supported as Mobile Device Management becomes more about basic device management and less about the mobile platform itself. MDM tools are leveraged for both company-owned and employee-owned (BYOD) devices across the enterprise or mobile devices owned by consumers.
+              </div>
+              <div class="modal-body2"><b>Technologies:</b> HTML,CSS,Bootstrap,and Google Map API </div>
+              <br />
+              <div class="modal-footer">
+                <button class="link modal-close">Close</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -269,13 +381,14 @@
         <div class="contact-me">
           <a
             href="mailto:bodarmanali66@gmail.com &subject=Mail from our Website&body=Some body text here"
-            target="_blank"><i class="fa-solid fa-envelope contact-icon"></i
+            target="_blank"
+            ><i class="fa-solid fa-envelope contact-icon"></i
           ></a>
-          <a href="https://www.linkedin.com/in/bodar-manali/"
-            target="_blank"><i class="fa-brands fa-linkedin contact-icon"></i
+          <a href="https://www.linkedin.com/in/bodar-manali/" target="_blank"
+            ><i class="fa-brands fa-linkedin contact-icon"></i
           ></a>
-          <a href="https://github.com/ManaliBodar"
-           target="_blank" ><i class="fa-brands fa-github contact-icon"></i
+          <a href="https://github.com/ManaliBodar" target="_blank"
+            ><i class="fa-brands fa-github contact-icon"></i
           ></a>
         </div>
         <div>
@@ -286,7 +399,7 @@
         </div>
       </div>
     </footer>
-    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="index.js"></script>
 
     <!-- <script src="https://code.jquery.com/jquery-3.5.0.js"></script> -->

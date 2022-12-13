@@ -1,6 +1,6 @@
 // for slide show
 //select left and right arrow and slide
-const slider = document.querySelector('.slider');
+const slider = document.querySelector(".slider");
 const slides = document.querySelectorAll(".slide");
 const leftBtn = document.querySelector(".prev-btn");
 const rightBtn = document.querySelector(".next-btn");
@@ -18,85 +18,100 @@ rightBtn.addEventListener("click", () => {
     slide.classList.remove("active");
   });
 
-  
   activeSlide++;
   if (activeSlide > numberofSlide - 1) {
     activeSlide = 0;
   }
   slides[activeSlide].classList.add("active");
   slideIcons[activeSlide].classList.add("active");
- 
 });
 
 leftBtn.addEventListener("click", () => {
+  slides.forEach((slide) => {
+    slide.classList.remove("active");
+  });
+  slideIcons.forEach((slide) => {
+    slide.classList.remove("active");
+  });
+
+  activeSlide--;
+  if (activeSlide < 0) {
+    activeSlide = numberofSlide - 1;
+  }
+  slides[activeSlide].classList.add("active");
+  slideIcons[activeSlide].classList.add("active");
+});
+
+//image autoplay
+
+let playSlider;
+const repeater = () => {
+  playSlider = setInterval(function () {
     slides.forEach((slide) => {
       slide.classList.remove("active");
     });
     slideIcons.forEach((slide) => {
       slide.classList.remove("active");
     });
-  
-    activeSlide--;
-    if (activeSlide < 0) {
-      activeSlide = numberofSlide - 1;
+
+    activeSlide++;
+    if (activeSlide > numberofSlide - 1) {
+      activeSlide = 0;
     }
     slides[activeSlide].classList.add("active");
     slideIcons[activeSlide].classList.add("active");
-    
-  });
-  
-
-  //image autoplay
-
- let playSlider;
-const repeater = () =>
-{
-    playSlider = setInterval(function()
-    {
-        slides.forEach((slide) => {
-            slide.classList.remove("active");
-          });
-          slideIcons.forEach((slide) => {
-            slide.classList.remove("active");
-          });
-        
-          activeSlide++;
-          if (activeSlide > numberofSlide - 1) {
-            activeSlide = 0;
-          }
-          slides[activeSlide].classList.add("active");
-          slideIcons[activeSlide].classList.add("active");
-    },4000);
-}
+  }, 4000);
+};
 
 repeater();
 
-//stop the image slider autoplay 
-slider.addEventListener("mouseover",() =>{
-    clearInterval(playSlider);
-})
+//stop the image slider autoplay
+slider.addEventListener("mouseover", () => {
+  clearInterval(playSlider);
+});
 
 //start the image slider autoplay again on mouseout
-slider.addEventListener('mouseout',()=>{
-    repeater();
-})
+slider.addEventListener("mouseout", () => {
+  repeater();
+});
 
+// for click on view button and scroll down to project list
 
-// for click on view button
-const viewBtn = document.getElementById('viewbtn');
-const project_Info = document.getElementById('project_info');
+$(document).ready(function () {
+  $("#viewbtn").click(function () {
+    var x = $(window).scrollTop();
+    $(window).scrollTop(x + 2100);
+  });
+});
 
-let scrolled = 0;
+//click on project image display pop up for project
 
-$('#viewbtn').on('click',function(){
-  scrolled = scrolled + 1240;
-console.log('scroll top');
-  $('#project-info').animate({
-    screenTop:scrolled
+const modalOpen = document.querySelectorAll(".modal-open");
+console.log(modalOpen);
+document.addEventListener('DOMContentLoaded',function()
+{
+  modalOpen.forEach(function (btn) {
+    btn.addEventListener("click", () => {
+      let modal = btn.getAttribute("data-modal");
+  
+      document.getElementById(modal).style.display = "block";
+  
+      console.log('clicked image')
+    });
   });
 });
 
 
-//click on project image display pop up for project
+const closeBtns = document.querySelectorAll(".modal-close");
 
-const projectAll = document.querySelectorAll('.project');
+closeBtns.forEach(function (btn) {
+  btn.addEventListener("click", () => {
+    let modal = (btn.closest(".modal").style.display = "none");
+  });
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target.className === "modal") {
+    e.target.style.display = "none";
+  }
+});
